@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.topbar {
+  background: royalblue;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: white;
+}
+
+nav a {
+  margin: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.btn {
+  background: green;
+  color: black;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.hero {
+  height: 85vh;
+  background: url('../images/Pariyatti Signboard .jpg') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: whitesmoke;
+  text-align: center;
+}
+
+.section {
+  padding: 100px;
+}
+
+.dark {
+  background: #f2f2f2;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+
+.container{
+  width:90%;
+  margin:auto;
+}
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  padding:15px;
+  background:royalblue;
+  color:white;
+}
+
+.navbar a{
+  color:white;
+  margin:10px;
+  text-decoration:none;
+}
+
+.section{
+  padding:40px 0;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  margin:10px;
+  border-radius:10px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+footer{
+  background:black;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
