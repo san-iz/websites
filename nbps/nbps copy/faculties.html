@@ -3,11 +3,37 @@
 <head>
   <title>Faculties</title>
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .back-btn{
+      position:absolute;
+      right:29px;
+      top:15px;
+      color:white;
+      text-decoration:none;
+      background:yellow;
+      padding:8px 14px;
+      border-radius:6px;
+      font-size:14px;
+      transition:0.3s;
+    }
+
+    .back-btn:hover{
+      background:#0099cc;
+    }
+
+  </style>
 </head>
+
 <body>
 
 <header class="navbar">
-  <h2>NBPS</h2>
+  <div class="logo">
+    <img src="images/about.jpeg" alt="NBPS Logo">
+  </div>
+
+  <!-- BACK BUTTON -->
+  <a href="javascript:history.back()" class="back-btn">← Back</a>
 </header>
 
 <section class="section">
@@ -18,7 +44,11 @@
     </div>
 
     <div class="card">
-      <h3>Humanities</h3>
+      <h3>Exam Question</h3>
+      <a href="https://drive.google.com/drive/folders/1XurssDBsCqrTATlJK7_7TCz6Be89awbI?usp=sharing" target="_blank">
+        Exam Past Papers/
+        अघिल्ला वर्षका प्रश्नपत्र
+      </a>
     </div>
 
     <div class="card">
@@ -31,5 +61,6 @@
 <footer>
   <p>© 2026 Nepal Bauddha Pariyatti Shikshya. All Rights Reserved.</p>
 </footer>
+
 </body>
 </html>
