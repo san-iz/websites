@@ -17,6 +17,34 @@ body {
   padding: 15px;
   background: white;
 }
+/* Logo */
+.logo img{
+  width:80px;
+  height:80px;
+  object-fit:cover;
+  border-radius:50%;
+}
+
+/* Navigation */
+nav{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+nav a{
+  text-decoration:none;
+  color:white;
+  font-weight:500;
+}
+
+/* Button */
+.btn{
+  background:deepskyblue;
+  color:white;
+  padding:10px 20px;
+  border-radius:8px;
+}
 
 nav a {
   margin: 10px;
@@ -29,6 +57,14 @@ nav a {
   color: black;
   padding: 8px 12px;
   border-radius: 5px;
+  text-decoration:none;
+  display:inline-block;
+  margin:10px;
+  font-size:14px;
+  transition:0.3s;
+}
+.btn:hover {
+  transform:scale(1.05);
 }
 
 .hero {
@@ -40,7 +76,13 @@ nav a {
   color: whitesmoke;
   text-align: center;
 }
-
+.hero h2 {
+  font-size:44px;
+  margin-bottom:10px;
+}
+.hero p {
+  opacity:0.9;
+}
 .section {
   padding: 100px;
 }
@@ -62,9 +104,15 @@ nav a {
 }
 
 .card {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
+  background:yellow;
+  padding:22px;
+  border-radius:12px;
+  transition:0.3s;
+  border:1px solid rgba(255,255,255,0.05);
+}
+.card:hover {
+  transform:translateY(-6px);
+  box-shadow:0 10px 30px rgba(255,20,147,0.2);
 }
 
 
@@ -89,13 +137,6 @@ nav a {
 
 .section{
   padding:40px 0;
-}
-
-.card{
-  background:white;
-  padding:20px;
-  margin:10px;
-  border-radius:10px;
 }
 
 .grid{
