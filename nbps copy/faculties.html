@@ -1,69 +1,432 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Faculties</title>
-  <link rel="stylesheet" href="css/style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>NBPS | Faculties & Resources</title>
+  <!-- Google Fonts for modern typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    .back-btn{
-      position:absolute;
-      right:29px;
-      top:15px;
-      color:white;
-      text-decoration:none;
-      background:yellow;
-      padding:8px 14px;
-      border-radius:6px;
-      font-size:14px;
-      transition:0.3s;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .back-btn:hover{
-      background:#0099cc;
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(145deg, #f8f5f0 0%, #efe7db 100%);
+      color: #2c2418;
+      line-height: 1.4;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
+    /* ----- NAVBAR / HEADER (modern elevated) ----- */
+    .navbar {
+      background: #1e2a2e;
+      backdrop-filter: blur(0px);
+      box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.15);
+      padding: 0.9rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      position: relative;
+      border-bottom: 2px solid #d4af7a;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo img {
+      width: 85px;
+      height: 85px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #e9c891;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.25s ease;
+    }
+
+    .logo img:hover {
+      transform: scale(1.02);
+    }
+
+    /* custom back button – refined gold/modern */
+    .back-btn {
+      background: rgba(212, 175, 122, 0.18);
+      backdrop-filter: blur(2px);
+      color: #fef3e2;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 8px 20px;
+      border-radius: 60px;
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      border: 1px solid rgba(212, 175, 122, 0.6);
+      letter-spacing: 0.3px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .back-btn i {
+      font-size: 1rem;
+      transition: transform 0.2s;
+    }
+
+    .back-btn:hover {
+      background: #d4af7a;
+      color: #1e2a2e;
+      border-color: #d4af7a;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .back-btn:hover i {
+      transform: translateX(-3px);
+    }
+
+    /* MAIN SECTION with responsive grid */
+    .section {
+      flex: 1;
+      padding: 3rem 1.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .container {
+      width: 100%;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 2rem;
+      justify-items: center;
+      align-items: stretch;
+    }
+
+    /* ----- 🔥 COOL CARD DESIGN with animated book image ----- */
+    .card {
+      background: rgba(255, 255, 245, 0.96);
+      backdrop-filter: blur(0px);
+      border-radius: 2rem;
+      overflow: hidden;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.05);
+      transition: all 0.35s ease;
+      cursor: pointer;
+      width: 100%;
+      max-width: 360px;
+      text-align: center;
+      padding: 1.8rem 1.5rem 2rem;
+      border: 1px solid rgba(212, 175, 122, 0.3);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    /* special hover effect + lift */
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 30px 45px -14px rgba(0, 0, 0, 0.35);
+      border-color: #d4af7a;
+      background: #ffffff;
+    }
+
+    /* ========== 🚀 COOL BOOK.PNG STYLES (makes image look incredible) ========== */
+    .cool-book-img {
+      width: 110px;
+      height: auto;
+      filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.2)) brightness(1.02) contrast(1.05);
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.5, 1.2);
+      display: block;
+      margin-bottom: 0.2rem;
+      border-radius: 12px;
+    }
+
+    /* animated glowing effect + slight 3D rotation on hover */
+    .card:hover .cool-book-img {
+      transform: scale(1.08) rotate(2deg);
+      filter: drop-shadow(0 20px 25px rgba(0, 0, 0, 0.3)) drop-shadow(0 0 6px rgba(212, 175, 122, 0.5));
+    }
+
+    /* additional subtle pulse animation on load (optional coolness) */
+    @keyframes gentleFloat {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    .cool-book-img {
+      animation: gentleFloat 3s infinite ease-in-out;
+    }
+
+    .card:hover .cool-book-img {
+      animation: none; /* stop floating on hover, instead use custom transform */
+    }
+
+    /* Typography inside cards */
+    .card h3 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #2c3e2f, #b87c2e);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.3px;
+      margin-top: 0.25rem;
+    }
+
+    .card p {
+      color: #4a3e2c;
+      font-weight: 500;
+      font-size: 0.95rem;
+      background: #fef7e8;
+      padding: 0.5rem 1rem;
+      border-radius: 40px;
+      display: inline-block;
+      margin-top: 0.2rem;
+      box-shadow: inset 0 1px 2px #fff8, 0 1px 1px rgba(0,0,0,0.02);
+    }
+
+    /* Exam card icon wrapper */
+    .exam-icon-wrapper {
+      background: #f1e8da;
+      border-radius: 60px;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 8px;
+      transition: all 0.3s ease;
+    }
+    .card:hover .exam-icon-wrapper {
+      background: #e9d9c2;
+      transform: scale(1.02);
+    }
+    .exam-icon-wrapper i {
+      font-size: 2.8rem;
+      color: #b5651e;
+    }
+
+    /* IT dept special badge */
+    .it-badge {
+      background: #2c3e2e20;
+      border-radius: 60px;
+      padding: 0.5rem 1.2rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #2c5e2a;
+      font-size: 0.9rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .it-badge i {
+      font-size: 1.6rem;
+      color: #b5651e;
+    }
+
+    /* footer polish */
+    footer {
+      background: #1e2a2e;
+      color: #ddcfb5;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.3px;
+      border-top: 1px solid #d4af7a30;
+      margin-top: 2rem;
+    }
+
+    /* responsiveness & additional refinements */
+    @media (max-width: 700px) {
+      .navbar {
+        padding: 0.8rem 1.2rem;
+      }
+      .back-btn {
+        padding: 6px 16px;
+        font-size: 0.8rem;
+      }
+      .grid {
+        gap: 1.5rem;
+      }
+      .card {
+        padding: 1.4rem 1rem 1.6rem;
+        max-width: 320px;
+      }
+      .card h3 {
+        font-size: 1.5rem;
+      }
+      .cool-book-img {
+        width: 90px;
+      }
+      .exam-icon-wrapper {
+        width: 70px;
+        height: 70px;
+      }
+      .exam-icon-wrapper i {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .section {
+        padding: 2rem 1rem;
+      }
+    }
+
+    /* subtle background ornament */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(circle at 10% 20%, rgba(212,175,122,0.05) 2%, transparent 2.5%);
+      background-size: 35px 35px;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* small helper to show interactive hint */
+    .click-hint {
+      font-size: 11px;
+      opacity: 0.55;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      justify-content: center;
+      transition: opacity 0.2s;
+    }
+    .card:hover .click-hint {
+      opacity: 0.9;
+    }
   </style>
 </head>
-
 <body>
 
 <header class="navbar">
   <div class="logo">
-    <img src="images/about.jpeg" alt="NBPS Logo">
+    <!-- original image reference (about.jpeg) as per code -->
+    <img src="images/Screenshot 2026-05-24 at 21.14.17.jpg" alt="NBPS Logo" onerror="this.onerror=null; this.src='https://placehold.co/52x52?text=NBPS';">
   </div>
 
-  <!-- BACK BUTTON -->
-  <a href="javascript:history.back()" class="back-btn">← Back</a>
+  <!-- BACK BUTTON with FontAwesome icon -->
+  <a href="javascript:history.back()" class="back-btn">
+    <i class="fas fa-arrow-left"></i> Back
+  </a>
 </header>
 
 <section class="section">
   <div class="container grid">
 
-   <div class="card">
-  <h3>Pariyatti Books</h3>
-  <a href="books.html">
-    किताब डाउनलोड गर्नुहोस् / Download Books
-  </a>
-</div>
+    <!-- ========== CARD 1: Pariyatti Books (click -> books.html) ========== -->
+    <div class="card" onclick="window.location.href='books.html'">
+      <img src="images/book.png" alt="Pariyatti Books" class="cool-book-img" 
+           onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/2997/2997328.png'; this.classList.add('cool-book-img');">
+      
+      <h3>Pariyatti Books</h3>
+      <p>
+        <i class="fas fa-download" style="margin-right: 6px; color:#b5651e;"></i> 
+        किताब डाउनलोड गर्नुहोस् / Download Books
+      </p>
+      <div class="click-hint">
+        <i class="fas fa-mouse-pointer"></i> Click to access library
+      </div>
+    </div>
 
-    <div class="card">
+    <!-- ========== CARD 2: Exam Question – NOW FULL CARD CLICK opens Google Drive link (same behavior as Pariyatti) ========== -->
+    <!-- The entire card redirects to the drive folder when clicked anywhere -->
+    <div class="card" onclick="window.open('https://drive.google.com/drive/folders/1XurssDBsCqrTATlJK7_7TCz6Be89awbI?usp=sharing', '_blank');">
+      <div class="exam-icon-wrapper">
+        <i class="fas fa-file-alt"></i>
+      </div>
       <h3>Exam Question</h3>
-      <a href="https://drive.google.com/drive/folders/1XurssDBsCqrTATlJK7_7TCz6Be89awbI?usp=sharing" target="_blank">
-        Exam Past Papers/
-        अघिल्ला वर्षका प्रश्नपत्र
-      </a>
+      <!-- inner textual link also works, but we keep it as visual element; it won't conflict because parent handles navigation -->
+      <div style="font-weight: 500; background: #fef3e0; padding: 6px 14px; border-radius: 40px; display: inline-block; margin: 5px 0;">
+        <i class="fab fa-google-drive" style="margin-right: 6px; color:#b5651e;"></i> 
+        Exam Past Papers / अघिल्ला वर्षका प्रश्नपत्र
+      </div>
+      <p style="background: transparent; box-shadow: none; padding: 0.2rem; font-size:0.8rem;">
+        <i class="fas fa-external-link-alt"></i> Google Drive Folder
+      </p>
+      <div class="click-hint">
+        <i class="fas fa-external-link-square-alt"></i> Click anywhere to open drive
+      </div>
     </div>
 
-    <div class="card">
+    <!-- ========== CARD 3: IT Department (static information, no navigation required) ========== -->
+    <div class="card" style="cursor: default;">
+      <div style="background: #2c3e2e20; border-radius: 50%; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+        <i class="fas fa-laptop-code" style="font-size: 3rem; color:#b87c2e;"></i>
+      </div>
       <h3>IT Department</h3>
+      <div class="it-badge">
+        <i class="fas fa-microchip"></i> <span>Digital Innovation & Support</span>
+      </div>
+      <p style="margin-top: 12px; background: none; font-size:0.85rem;">
+        <i class="fas fa-envelope"></i> it@nbps.edu.np <br>
+        <i class="fas fa-globe"></i> E-Learning infrastructure
+      </p>
     </div>
 
-  </div>
+  </div> <!-- end grid -->
 </section>
 
 <footer>
-  <p>© 2026 Nepal Bauddha Pariyatti Shikshya. All Rights Reserved.</p>
+  <p>© 2026 Nepal Bauddha Pariyatti Shikshya. All Rights Reserved. <i class="fas fa-dharmachakra" style="margin-left: 6px;"></i></p>
 </footer>
+
+<script>
+  (function() {
+   
+    const examCard = document.querySelector('.card:nth-child(2)');
+    if(examCard) {
+     
+      examCard.style.cursor = 'pointer';
+    
+      examCard.setAttribute('aria-label', 'Open exam past papers on Google Drive');
+    
+    }
+    
+
+    const booksCard = document.querySelector('.card:first-child');
+    if(booksCard) {
+      booksCard.style.cursor = 'pointer';
+      booksCard.setAttribute('aria-label', 'Navigate to Pariyatti books page');
+    }
+    
+    const itCard = document.querySelector('.card:last-child');
+    if(itCard) {
+      itCard.style.cursor = 'default';
+    }
+
+    console.log('✅ Exam card now opens Google Drive link on click anywhere (same as Pariyatti book card)');
+  })();
+</script>
+
 
 </body>
 </html>
