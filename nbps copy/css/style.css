@@ -1,0 +1,581 @@
+/* =========================================
+   GLOBAL RESET
+========================================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:linear-gradient(135deg,#FDF8F0 0%,#F4EDE4 100%);
+  color:#2C2418;
+  line-height:1.5;
+  scroll-behavior:smooth;
+  min-height:100vh;
+}
+
+/* subtle background pattern */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(212,175,122,0.05) 2%, transparent 2.5%);
+  background-size:35px 35px;
+  pointer-events:none;
+  z-index:-1;
+}
+
+/* =========================================
+   CONTAINER
+========================================= */
+.container{
+  width:90%;
+  max-width:1280px;
+  margin:auto;
+  padding:0 24px;
+}
+
+/* =========================================
+   TOPBAR
+========================================= */
+.topbar{
+  background:#1E2A2E;
+  color:#E6DCC8;
+  padding:10px 24px;
+  font-size:.85rem;
+  text-align:center;
+  border-bottom:1px solid rgba(212,175,122,.3);
+}
+
+.topbar i{
+  margin:0 4px 0 12px;
+  color:#D4AF7A;
+}
+
+/* =========================================
+   HEADER / NAVBAR
+========================================= */
+header{
+  background:linear-gradient(135deg,#B8860B,#D4A017,#F5C542);
+  backdrop-filter:blur(12px);
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 8px 20px rgba(0,0,0,.18);
+  border-bottom:1px solid #FFE7A0;
+}
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  padding:12px 0;
+}
+
+.logo img{
+  width:55px;
+  height:55px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid #FFF2C7;
+  transition:.3s;
+}
+
+.logo img:hover{
+  transform:scale(1.05);
+}
+
+nav{
+  display:flex;
+  gap:1.8rem;
+  flex-wrap:wrap;
+}
+
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  position:relative;
+  transition:.25s;
+}
+
+nav a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:#fff7d6;
+  transition:.25s;
+}
+
+nav a:hover{
+  color:#3B2400;
+}
+
+nav a:hover::after{
+  width:100%;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+.btn{
+  background:linear-gradient(95deg,#D4AF7A,#B88B4A);
+  padding:10px 22px;
+  border-radius:40px;
+  color:#A14F12 !important;
+  font-weight:700;
+  text-decoration:none;
+  transition:.3s;
+  display:inline-block;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 18px rgba(0,0,0,.2);
+}
+
+/* floating back button */
+.back-btn{
+  position:fixed;
+  bottom:24px;
+  right:24px;
+  background:burlywood;
+  color:#F5EFE6;
+  padding:12px 20px;
+  border-radius:50px;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  transition:.3s;
+  z-index:99;
+}
+
+.back-btn:hover{
+  background:gold;
+  color:#1E2A2E;
+  transform:translateY(-3px);
+}
+.topbar{
+  background:#B8860B;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 24px;
+  flex-wrap:wrap;
+  font-size:0.95rem;
+}
+
+.topbar-left{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.topbar a{
+  color:white;
+  text-decoration:none;
+}
+
+.topbar a:hover{
+  text-decoration:underline;
+}
+
+.lang-btn{
+  background:rgba(255,255,255,0.15);
+  border:1px solid rgba(255,255,255,0.3);
+  color:white;
+  padding:8px 14px;
+  border-radius:30px;
+  cursor:pointer;
+  font-size:0.95rem;
+  font-weight:600;
+  transition:.3s;
+}
+
+.lang-btn:hover{
+  background:rgba(255,255,255,0.25);
+}
+
+.lang-btn span{
+  padding:2px 6px;
+}
+
+.lang-btn .active{
+  color:#2C1A00;
+  background:#FFF2C7;
+  border-radius:20px;
+}
+/* =========================================
+   HERO SECTION
+========================================= */
+/* HERO SECTION */
+.hero{
+  background:url("../images/Pariyatti Signboard2.jpg");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  min-height:70vh;
+  padding:120px 24px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+/* DARK OVERLAY */
+.hero::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.45);
+  z-index:1;
+}
+
+/* HERO CONTENT */
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:850px;
+  animation:fadeIn 1.5s ease;
+}
+
+/* HEADING */
+.hero h1{
+  font-size:3.5rem;
+  color:#FFF6E5;
+  font-weight:800;
+  margin-bottom:20px;
+  line-height:1.2;
+  text-shadow:2px 2px 8px rgba(0,0,0,0.5);
+}
+
+/* PARAGRAPH */
+.hero p{
+  color:#F2E2C9;
+  max-width:750px;
+  margin:20px auto;
+  font-size:1.1rem;
+  line-height:1.8;
+}
+
+/* BUTTONS */
+.hero-btns{
+  margin-top:30px;
+}
+
+.hero-btns a{
+  display:inline-block;
+  margin:10px;
+  padding:14px 30px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s ease;
+}
+
+/* =========================================
+   SECTIONS
+========================================= */
+.section{
+  padding:70px 0;
+}
+
+.dark{
+  background:#F2EAE0;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+h2{
+  font-size:2.2rem;
+  margin-bottom:20px;
+  position:relative;
+  display:inline-block;
+  background:linear-gradient(125deg,#2C3A2F,#B87C2E);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+h2::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-10px;
+  width:60px;
+  height:4px;
+  background:#D4AF7A;
+  border-radius:4px;
+}
+
+/* =========================================
+   GRID & CARDS
+========================================= */
+.grid,
+.cards{
+  display:grid;
+  grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+  gap:2rem;
+  margin-top:24px;
+}
+
+.card{
+  background:white;
+  border-radius:28px;
+  padding:1.8rem;
+  text-align:center;
+  transition:.35s;
+  box-shadow:0 12px 26px -12px rgba(0,0,0,.1);
+  border:1px solid rgba(212,175,122,.25);
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 24px 36px -14px rgba(0,0,0,.2);
+}
+
+.card i{
+  font-size:2rem;
+  color:#B87C2E;
+  margin-bottom:12px;
+}
+
+.card h3{
+  margin-bottom:12px;
+  font-size:1.5rem;
+}
+
+.card p{
+  color:#555;
+}
+.card button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      border: none;
+      border-radius: 12px;
+      background: #2563eb;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+.card button:hover {
+      background: #1d4ed8;
+    }
+
+
+/* =========================================
+   BOOK IMAGE EFFECT
+========================================= */
+.cool-book-img{
+  width:110px;
+  border-radius:12px;
+  transition:.4s;
+  animation:gentleFloat 3s infinite ease-in-out;
+}
+
+.card:hover .cool-book-img{
+  transform:scale(1.08) rotate(2deg);
+  animation:none;
+}
+
+@keyframes gentleFloat{
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-5px);
+  }
+}
+
+/* =========================================
+   HALF LAYOUT
+========================================= */
+.half-layout{
+  display:flex;
+  flex-wrap:wrap;
+  gap:2rem;
+  margin-top:24px;
+}
+
+.half-box{
+  flex:1;
+  min-width:260px;
+  overflow:hidden;
+  border-radius:32px;
+}
+
+.half-box img,
+.half-box iframe{
+  width:100%;
+  height:380px;
+  object-fit:cover;
+  border:none;
+}
+
+/* =========================================
+   TABLE
+========================================= */
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+table th{
+  background:burlywood;
+  color:white;
+  padding:15px;
+}
+
+table td{
+  padding:15px;
+  border-bottom:1px solid #eee;
+}
+.instructions {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      margin-top: 50px;
+    }
+.instructions h2 {
+      margin-bottom: 20px;
+      color: maroon;
+    }
+
+.instructions ul li {
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+ /* small helper to show interactive hint */
+    .click-hint {
+      font-size: 11px;
+      opacity: 0.55;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      justify-content: center;
+      transition: opacity 0.2s;
+    }
+    .card:hover .click-hint {
+      opacity: 0.9;
+    }
+/* =========================================
+   CONTACT
+========================================= */
+.contact {
+      margin-top: 60px;
+      background: linear-gradient(to right, #2563eb, #4f46e5);
+      padding: 50px;
+      border-radius: 20px;
+      color: white;
+    }
+
+    .contact h2 {
+      margin-bottom: 20px;
+      font-size: 36px;
+    }
+
+    .contact form {
+      display: grid;
+      gap: 15px;
+    }
+
+    .contact input,
+    .contact textarea {
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+    }
+
+    .contact button {
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
+      background: white;
+      color: #2563eb;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+/* =========================================
+   FOOTER
+========================================= */
+footer{
+  background:#1E2A2E;
+  color:#DFD5BF;
+  padding:32px 24px;
+  text-align:center;
+  border-top:1px solid #D4AF7A40;
+}
+
+footer i{
+  color:#D4AF7A;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* MOBILE RESPONSIVE */
+@media(max-width:768px){
+
+  .hero{
+    min-height:60vh;
+    padding:100px 20px;
+  }
+
+  .hero h1{
+    font-size:2.3rem;
+  }
+
+  .hero p{
+    font-size:1rem;
+    line-height:1.6;
+  }
+
+  .hero-btns a{
+    display:block;
+    width:80%;
+    margin:12px auto;
+  }
+}

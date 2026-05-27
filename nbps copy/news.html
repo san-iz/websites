@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Nepal Bauddha Pariyatti Shikshya | Modern Buddhist Academy</title>
+  
+  <!-- Google Fonts + Font Awesome 6 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<!-- TOP BAR with icons -->
+<div class="topbar">
+
+  <div class="topbar-left">
+    <i class="fas fa-envelope"></i>
+    <a href="mailto:pariyatti2556@gmail.com">
+      pariyatti2556@gmail.com
+    </a>
+
+    &nbsp; | &nbsp;
+
+    <i class="fas fa-phone"></i>
+    4106936, 9851167525
+  </div>
+
+  <button id="langToggle" class="lang-btn">
+    <span id="enBtn" class="active">🇬🇧 English</span>
+    |
+    <span id="npBtn">🇳🇵 नेपाली</span>
+  </button>
+
+</div>
+
+<!-- NAVBAR (modern sticky) -->
+<header>
+  <div class="container navbar">
+    <div class="logo">
+      <img src="images/c87ff6f9-0001-408b-9d88-79ca6f009046.jpeg" alt="NBPS Logo" onerror="this.src='https://placehold.co/60x60?text=NBPS'">
+    </div>
+        <nav>
+  <a href="untitled.html" id="homeLink">
+    <i class="fas fa-home"></i> Home
+  </a>
+
+  <a href="about.html" id="aboutLink">
+    <i class="fas fa-info-circle"></i> About
+  </a>
+
+  <a href="courses.html" id="noticeLink">
+    <i class="fas fa-newspaper"></i> Notices
+  </a>
+
+  <a href="faculties.html" id="facultyLink">
+    <i class="fas fa-chalkboard-user"></i>E-Books
+  </a>
+
+  <a href="news.html" id="newsLink">
+    <i class="fas fa-bullhorn"></i> News
+  </a>
+
+  <a href="contact.html" id="contactLink">
+    <i class="fas fa-address-card"></i> Contact
+  </a>
+
+  <a class="btn" href="http://nbps.org.np" id="applyBtn">
+    <i class="fas fa-graduation-cap"></i> Apply Now
+  </a>
+</nav>
+
+  </div>
+</header>
+
+<!-- HERO - using your local image: Pariyatti Signboard.jpg (path: ../images/Pariyatti Signboard.jpg) -->
+ <section class="hero">
+
+    <div class="hero-content">
+
+      <h1 id="heroTitle">
+        Nepal Bauddha Pariyatti Shikshya <i class="fas fa-dharmachakra"></i>
+      </h1>
+
+      <p id="heroText">
+        Enlightening minds through traditional wisdom & modern excellence
+      </p>
+
+      <a href="http://nbps.org.np" class="btn" id="joinBtn">
+        <i class="fas fa-hand-peace"></i>
+        Join Now
+      </a>
+
+    </div>
+
+  </section>
+<!-- NEWS section with enhanced style -->
+<section class="section dark">
+  <div class="container">
+    <h2><i class="fas fa-newspaper"></i> Latest News</h2>
+    <div class="grid">
+      <a href="courses.html" class="card-link" target="_blank" rel="noopener noreferrer">
+      <div class="card"><i class="fas fa-file-alt"></i> 📢 Exam Notice Released(परीक्षा सम्बन्धी सूचना प्रकाशित)</div>
+      
+      <!-- New Admission Open with link -->
+      <a href="http://nbps.org.np" class="card-link" target="_blank" rel="noopener noreferrer">
+        <div class="card"><i class="fas fa-user-plus"></i> 🎓 New Admission Open (नयाँ भर्ना खुल्यो !!!)</div>
+      </a>
+  </div>
+</section>
+<!-- MAIN CENTER + LOCATION (modern layout) -->
+<section class="section">
+  <div class="container">
+    <h2><i class="fas fa-map-marker-alt"></i> Main Center & Location</h2>
+    <div class="half-layout">
+      <div class="half-box">
+        <img src="images/462855161_8432970946791460_5613189339369628178_n.jpg" alt="Main Center" onerror="this.src='https://placehold.co/800x500?text=NBPS+Campus'">
+      </div>
+      <div class="half-box">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.5000000000005!2d85.3431457!3d27.686187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19925a350145%3A0x10fc954ea3284c5!2sVishwa%20Shanti%20Vihar%20(The%20World%20Peace%20Temple)!5e0!3m2!1sen!2snp!4v1700000000000" 
+          allowfullscreen="" 
+          loading="lazy"
+          title="NBPS Location Map"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Nepal Bauddha Pariyatti Shikshya. All Rights Reserved. <i class="fas fa-dharmachakra"></i> | Wisdom & Compassion</p>
+</footer>
+
+<!-- FLOATING BACK BUTTON -->
+<a href="javascript:history.back()" class="back-btn">
+  <i class="fas fa-arrow-left"></i> Back
+</a>
+
+<script>
+  (function() {
+    // external links open safely
+    const applyBtn = document.querySelector('.hero .btn');
+    if(applyBtn) applyBtn.setAttribute('target', '_blank');
+    const navApply = document.querySelector('.navbar .btn');
+    if(navApply) navApply.setAttribute('target', '_blank');
+    
+    // Hero background image validation for "Pariyatti Signboard.jpg"
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) {
+      // Get the computed background image URL to test if it loads
+      const bgImage = window.getComputedStyle(heroSection).backgroundImage;
+      // extract URL from css background value
+      const urlMatch = bgImage.match(/url\(["']?([^"')]+)["']?\)/);
+      if (urlMatch && urlMatch[1]) {
+        const imgUrl = urlMatch[1];
+        const testImg = new Image();
+        testImg.src = imgUrl;
+        testImg.onerror = function() {
+          console.warn("⚠️ Hero image not found at path: " + imgUrl);
+          console.log("💡 Tip: Make sure 'Pariyatti Signboard.jpg' exists inside 'images' folder (relative to this HTML file). If the file is in the same directory, update path to 'Pariyatti Signboard.jpg' or './Pariyatti Signboard.jpg'");
+          // Apply a fallback background color (already fine due to gradient)
+          heroSection.style.background = "linear-gradient(115deg, #1E2A2E 0%, #2C3A2F 100%)";
+          heroSection.style.backgroundBlendMode = "normal";
+        };
+        testImg.onload = function() {
+          console.log("✅ Hero background loaded successfully: " + imgUrl);
+        };
+      }
+    }
+
+    // cards hover interactions
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transition = 'all 0.3s ease';
+      });
+    });
+    console.log('🔥 NBPS website - Hero background set to: ../images/Pariyatti Signboard.jpg');
+    console.log('📌 If image does not appear, please verify the file path. The HTML expects the image inside "images" folder at root level or adjust path accordingly.');
+  })();
+</script>
+<script src="js/app.js"></script>
+</body>
+</html>

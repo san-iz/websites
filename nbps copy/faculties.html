@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>NBPS | Faculties & Resources</title>
+  <!-- Google Fonts for modern typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  
+<div class="topbar">
+
+  <div class="topbar-left">
+    <i class="fas fa-envelope"></i>
+    <a href="mailto:pariyatti2556@gmail.com">
+      pariyatti2556@gmail.com
+    </a>
+
+    &nbsp; | &nbsp;
+
+    <i class="fas fa-phone"></i>
+    4106936, 9851167525
+  </div>
+
+  <button id="langToggle" class="lang-btn">
+    <span id="enBtn" class="active">🇬🇧 English</span>
+    |
+    <span id="npBtn">🇳🇵 नेपाली</span>
+  </button>
+
+</div>
+<header class="navbar">
+  <div class="container navbar">
+    <div class="logo">
+      <img src="images/c87ff6f9-0001-408b-9d88-79ca6f009046.jpeg" alt="NBPS Logo" onerror="this.src='https://placehold.co/60x60?text=NBPS'">
+    </div>
+        <nav>
+  <a href="untitled.html" id="homeLink">
+    <i class="fas fa-home"></i> Home
+  </a>
+
+  <a href="about.html" id="aboutLink">
+    <i class="fas fa-info-circle"></i> About
+  </a>
+
+  <a href="courses.html" id="noticeLink">
+    <i class="fas fa-newspaper"></i> Notices
+  </a>
+
+  <a href="faculties.html" id="facultyLink">
+    <i class="fas fa-chalkboard-user"></i> E-Books
+  </a>
+
+  <a href="news.html" id="newsLink">
+    <i class="fas fa-bullhorn"></i> News
+  </a>
+
+  <a href="contact.html" id="contactLink">
+    <i class="fas fa-address-card"></i> Contact
+  </a>
+
+  <a class="btn" href="http://nbps.org.np" id="applyBtn">
+    <i class="fas fa-graduation-cap"></i> Apply Now
+  </a>
+</nav>
+
+  </div>
+</header>
+
+  <!-- BACK BUTTON with FontAwesome icon -->
+  <a href="javascript:history.back()" class="back-btn">
+    <i class="fas fa-arrow-left"></i> Back
+  </a>
+</header>
+
+<section class="section">
+  <div class="container grid">
+
+    <!-- ========== CARD 1: Pariyatti Books (click -> books.html) ========== -->
+    <div class="card" onclick="window.location.href='books.html'">
+      <img src="images/book.png" alt="Pariyatti Books" class="cool-book-img" 
+           onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/2997/2997328.png'; this.classList.add('cool-book-img');">
+      
+      <h3>Pariyatti Books</h3>
+      <p>
+        <i class="fas fa-download" style="margin-right: 6px; color:#b5651e;"></i> 
+        किताब डाउनलोड गर्नुहोस् / Download Books
+      </p>
+      <div class="click-hint">
+        <i class="fas fa-mouse-pointer"></i> Click to access library
+      </div>
+    </div>
+
+    <!-- ========== CARD 2: Exam Question – NOW FULL CARD CLICK opens Google Drive link (same behavior as Pariyatti) ========== -->
+    <!-- The entire card redirects to the drive folder when clicked anywhere -->
+    <div class="card" onclick="window.open('https://drive.google.com/drive/folders/1XurssDBsCqrTATlJK7_7TCz6Be89awbI?usp=sharing', '_blank');">
+      <div class="exam-icon-wrapper">
+        <i class="fas fa-file-alt"></i>
+      </div>
+      <h3>Exam Question</h3>
+      <!-- inner textual link also works, but we keep it as visual element; it won't conflict because parent handles navigation -->
+      <div style="font-weight: 500; background: #fef3e0; padding: 6px 14px; border-radius: 40px; display: inline-block; margin: 5px 0;">
+        <i class="fab fa-google-drive" style="margin-right: 6px; color:#b5651e;"></i> 
+        Exam Past Papers / अघिल्ला वर्षका प्रश्नपत्र
+      </div>
+      <p style="background: transparent; box-shadow: none; padding: 0.2rem; font-size:0.8rem;">
+        <i class="fas fa-external-link-alt"></i> Google Drive Folder
+      </p>
+      <div class="click-hint">
+        <i class="fas fa-external-link-square-alt"></i> Click anywhere to open drive
+      </div>
+    </div>
+
+    <!-- ========== CARD 3: IT Department (static information, no navigation required) ========== -->
+    <!-- Entire card opens YouTube playlists -->
+
+<div class="card"
+onclick="window.open('https://www.youtube.com/@nepalbauddhapariyattishiks9308/playlists', '_blank');">
+
+  <div class="exam-icon-wrapper">
+    <i class="fab fa-youtube"></i>
+  </div>
+
+  <h3>YouTube Classes</h3>
+
+  <div class="it-badge">
+    <i class="fab fa-youtube"></i>
+    <span>Online Video Classes / भिडियो कक्षा</span>
+  </div>
+
+  <p>
+    <i class="fas fa-play-circle"></i>
+    NBPS Official YouTube Playlist
+    <br>
+
+    <i class="fas fa-globe"></i>
+    Digital Learning Platform
+  </p>
+
+  <div class="click-hint">
+    <i class="fas fa-external-link-square-alt"></i>
+    Click anywhere to open YouTube
+  </div>
+
+</div>
+  </div> <!-- end grid -->
+</section>
+
+<footer>
+  <p>© 2026 Nepal Bauddha Pariyatti Shikshya. All Rights Reserved. <i class="fas fa-dharmachakra"></i> | Wisdom & Compassion</p>
+</footer>
+
+<script>
+  (function() {
+   
+    const examCard = document.querySelector('.card:nth-child(2)');
+    if(examCard) {
+     
+      examCard.style.cursor = 'pointer';
+    
+      examCard.setAttribute('aria-label', 'Open exam past papers on Google Drive');
+    
+    }
+    
+
+    const booksCard = document.querySelector('.card:first-child');
+    if(booksCard) {
+      booksCard.style.cursor = 'pointer';
+      booksCard.setAttribute('aria-label', 'Navigate to Pariyatti books page');
+    }
+    
+    const itCard = document.querySelector('.card:last-child');
+    if(itCard) {
+      itCard.style.cursor = 'default';
+    }
+
+    console.log('✅ Exam card now opens Google Drive link on click anywhere (same as Pariyatti book card)');
+  })();
+</script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
